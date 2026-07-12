@@ -1,10 +1,18 @@
 # Dependencies
 node_modules/
 
-# Secrets
+# Env / secrets
 .env
 .env.*
 !.env.example
+
+# Playwright local output
+crm-playwright-tests/exploration/
+crm-playwright-tests/playwright-report/
+crm-playwright-tests/test-results/
+crm-playwright-tests/playwright/.auth/
+crm-playwright-tests/fixtures/test-users.local.json
+crm-playwright-tests/node_modules/
 
 # JMeter generated output
 *.jtl

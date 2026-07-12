@@ -1,0 +1,6 @@
+exploration/
+playwright-report/
+test-results/
+playwright/.auth/
+fixtures/test-users.local.json
+node_modules/

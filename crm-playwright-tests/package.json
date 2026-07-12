@@ -1,0 +1,21 @@
+{
+  "name": "crm-playwright-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright E2E tests for SwiftPrint CRM (scoped modules only)",
+  "scripts": {
+    "users:create": "node scripts/create-test-users.mjs",
+    "explore:api": "node scripts/explore-api.mjs",
+    "explore:ui": "node scripts/explore-ui.mjs",
+    "test": "playwright test --project=chromium",
+    "test:all": "playwright test",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:report": "playwright show-report",
+    "test:users": "playwright test tests/users.spec.ts",
+    "test:live-chats": "playwright test tests/live-chats.spec.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "dotenv": "^17.4.2"
+  }
+}

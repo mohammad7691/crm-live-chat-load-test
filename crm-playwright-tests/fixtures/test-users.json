@@ -1,0 +1,27 @@
+{
+  "teamId": "cmpl1ayih001jj8qgnmh8fmc4",
+  "teamName": "ASI Team",
+  "users": {
+    "qaAgentA": {
+      "id": "cmrh9x32m000r8pqgk04p1s69",
+      "email": "qa-auto-agent-a@test.local",
+      "fullName": "QA Auto Agent A",
+      "roleKey": "AGENT",
+      "teamId": "cmpl1ayih001jj8qgnmh8fmc4"
+    },
+    "qaAgentB": {
+      "id": "cmrh9x3cm000s8pqghmxzdy4h",
+      "email": "qa-auto-agent-b@test.local",
+      "fullName": "QA Auto Agent B",
+      "roleKey": "AGENT",
+      "teamId": "cmpl1ayih001jj8qgnmh8fmc4"
+    },
+    "qaAdminLite": {
+      "id": "cmrh9x3mi000t8pqgv0vezd4i",
+      "email": "qa-auto-admin-lite@test.local",
+      "fullName": "QA Auto Admin Lite",
+      "roleKey": "ADMIN",
+      "teamId": "cmpl1ayih001jj8qgnmh8fmc4"
+    }
+  }
+}
