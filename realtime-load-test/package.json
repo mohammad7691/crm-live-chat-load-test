@@ -1,0 +1,16 @@
+{
+  "name": "crm-realtime-socket-load-test",
+  "version": "1.0.0",
+  "description": "Socket.io load test for CRM live chat (agent + visitor real-time layer)",
+  "type": "module",
+  "scripts": {
+    "probe": "node probe.js",
+    "test": "node socket-load-test.js",
+    "test:light": "VISITOR_COUNT=5 AGENT_COUNT=5 RAMP_UP_MS=15000 HOLD_MS=30000 node socket-load-test.js",
+    "test:medium": "VISITOR_COUNT=20 AGENT_COUNT=10 RAMP_UP_MS=30000 HOLD_MS=60000 node socket-load-test.js",
+    "report": "node generate-report.js"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}

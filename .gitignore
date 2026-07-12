@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# JMeter generated output
+*.jtl
+*.log
+jmeter-socketio-test/dashboard-*/
+jmeter-socketio-test/results-*/
+jmeter-socketio-test/results-1000/
+
+# Legacy / local run output
+results/
+reports/http-dashboard/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
