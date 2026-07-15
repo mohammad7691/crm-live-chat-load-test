@@ -2,6 +2,9 @@
 
 Portfolio project: **performance and API testing** for a CRM live chat platform using **Apache JMeter**, **REST APIs**, and **Socket.IO / WebSocket** real-time messaging.
 
+**GitHub (this repo):** [mohammad7691/crm-live-chat-load-test](https://github.com/mohammad7691/crm-live-chat-load-test)  
+**Playwright E2E (separate repo):** [mohammad7691/crm-playwright-e2e](https://github.com/mohammad7691/crm-playwright-e2e)
+
 ## What this project does
 
 Simulates real customer and agent behavior under load:
