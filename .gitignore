@@ -20,6 +20,8 @@ crm-playwright-tests/node_modules/
 jmeter-socketio-test/dashboard-*/
 jmeter-socketio-test/results-*/
 jmeter-socketio-test/results-1000/
+jmeter-socketio-test/results-CACHE_REFRESH_STORM_500/
+jmeter-socketio-test/dashboard-CACHE_REFRESH_STORM_500/
 
 # Legacy / local run output
 results/

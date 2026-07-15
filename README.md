@@ -48,43 +48,53 @@ cp .env.example .env
 
 **Never commit `.env`** — it is in `.gitignore`.
 
-### 3. Run JMeter load test
+### 3. Run JMeter load test (1000-user wave plan)
+
+This repo keeps the **wave / 1000-user chat** JMeter plan plus a separate **cache refresh storm** plan.
 
 ```bash
 cd jmeter-socketio-test
-chmod +x run-full-jmeter.sh run-1000-load.sh
-./run-full-jmeter.sh
-```
+chmod +x run-1000-load.sh run-CACHE-REFRESH-STORM-500-WAVE.sh
 
-Customize scale:
-
-```bash
-VISITOR_THREADS=500 AGENT_THREADS=10 VISITOR_RAMP=180 ./run-full-jmeter.sh
-```
-
-1000-user wave mode:
-
-```bash
+# Live chat capacity (wave / 1000)
 ./run-1000-load.sh
+
+# Website cache / concurrent page-refresh storm (500 users in waves)
+./run-CACHE-REFRESH-STORM-500-WAVE.sh
 ```
 
-Results: `dashboard-full-*v-*a/index.html` or `dashboard-1000/index.html`
+Default chat waves: **5 × 200 users = 1000** (90s pause).
+
+500 chat users in waves:
+
+```bash
+TOTAL_USERS=500 WAVES=5 USERS_PER_WAVE=100 ./run-1000-load.sh
+```
+
+Results:
+- Chat: `dashboard-1000/index.html`
+- Cache storm: `dashboard-CACHE_REFRESH_STORM_500/index.html`
+
+Details:
+- [`jmeter-socketio-test/README-1000-LOAD.md`](jmeter-socketio-test/README-1000-LOAD.md)
+- [`jmeter-socketio-test/README-CACHE-REFRESH-STORM-500.md`](jmeter-socketio-test/README-CACHE-REFRESH-STORM-500.md)
 
 ## Project structure
 
 ```
 crm-live-chat-load-test/
 ├── jmeter-socketio-test/
-│   ├── crm_chat_full_jmeter.jmx      # Main test plan (API + WebSocket + load)
-│   ├── crm_chat_full_jmeter_1000.jmx # 1000-user variant (waves, throttling)
-│   ├── run-full-jmeter.sh
+│   ├── crm_chat_full_jmeter_1000.jmx              # Chat wave / 1000-user load
 │   ├── run-1000-load.sh
-│   └── merge-jtl.py
-├── jmeter-plugins/                   # WebSocket Samplers JAR
-├── reports/                          # Test summaries and team reports
-├── http-load-test/                   # Legacy HTTP-only JMeter plan
-├── realtime-load-test/               # Legacy Node socket load test
-└── .env.example                      # Credential template
+│   ├── CACHE_REFRESH_STORM_500_USERS_WAVE.jmx     # Concurrent page-refresh / cache test
+│   ├── run-CACHE-REFRESH-STORM-500-WAVE.sh
+│   ├── merge-jtl.py
+│   └── load-env.sh
+├── jmeter-plugins/                    # WebSocket Samplers JAR
+├── reports/                           # Test summaries and team reports
+├── crm-playwright-tests/              # CRM UI E2E (scoped modules)
+├── realtime-load-test/                # Legacy Node socket helpers
+└── .env.example                       # Credential template
 ```
 
 ## Test phases (JMeter)
